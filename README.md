@@ -8,6 +8,7 @@ A custom [CasaOS](https://casaos.io) AppStore with self-hosted applications.
 | --- | ----------- | -------- |
 | [Cloudreve](Apps/cloudreve) | Self-hosted cloud storage platform with multiple storage backends | TG Store |
 | [Seerr](Apps/seerr) | Modern media request & discovery platform | Media |
+| [SFTPGo](Apps/sftpgo) | High-performance SFTP, FTP/S & WebDAV server | Network |
 
 ## Add to CasaOS
 

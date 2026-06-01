@@ -1,0 +1,38 @@
+name: sftpgo
+services:
+  sftpgo:
+    image: drakkan/sftpgo:latest
+    restart: unless-stopped
+    ports:
+      - 2345:8080
+      - 2022:2022
+      - 2121:2121
+      - 10080:10080
+    environment:
+      - SFTPGO_DATA_PROVIDER_CREATE_DEFAULT_ADMIN=true
+      - SFTPGO_FTPD_BINDINGS_0_FORCE_PASSIVE_IP=127.0.0.1:8080
+      - SFTPGO_FTPD_BINDINGS_0_PORT=2121
+      - SFTPGO_HTTPD_BINDINGS_0_ADDRESS=0.0.0.0
+      - SFTPGO_HTTPD_BINDINGS_0_PORT=8080
+      - SFTPGO_WEBDAVD_BINDINGS_0_PORT=10080
+    volumes:
+      - /DATA/AppData/$AppID/srv:/srv/sftpgo
+      - /DATA/AppData/$AppID/data:/var/lib/sftpgo
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: sftpgo
+  description:
+    en_us: SFTPGo is a fully featured and highly configible SFTP, FTP/S, and WebDAV server with optional HTTP API, supporting multiple storage backends including local filesystem, encrypted local, S3, Google Cloud Storage, Azure Blob, and more.
+  tagline:
+    en_us: High-performance SFTP, FTP/S & WebDAV server
+  developer: Nicola Murino
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/sftpgo/sftp.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/sftpgo/sftp.png
+  title:
+    en_us: SFTPGo
+  category: Network
+  port_map: '2345'
