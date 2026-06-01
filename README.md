@@ -7,6 +7,7 @@ A custom [CasaOS](https://casaos.io) AppStore with self-hosted applications.
 | App | Description | Category |
 | --- | ----------- | -------- |
 | [Cloudreve](Apps/cloudreve) | Self-hosted cloud storage platform with multiple storage backends | TG Store |
+| [Seerr](Apps/seerr) | Modern media request & discovery platform | Media |
 
 ## Add to CasaOS
 
