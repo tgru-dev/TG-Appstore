@@ -1,0 +1,37 @@
+[
+  {
+    "name": "TG Store",
+    "font": "cloud-outline",
+    "description": "Apps from TG Store"
+  },
+  {
+    "name": "Cloud",
+    "font": "cloud-outline",
+    "description": "Public cloud alternatives or enhanced Apps"
+  },
+  {
+    "name": "Developer",
+    "font": "code-greater-than-or-equal",
+    "description": "Developer Apps"
+  },
+  {
+    "name": "Media",
+    "font": "play-circle-outline",
+    "description": "Media Apps"
+  },
+  {
+    "name": "Utilities",
+    "font": "toolbox-outline",
+    "description": "Utilities Apps"
+  },
+  {
+    "name": "Network",
+    "font": "lan",
+    "description": "Network Apps"
+  },
+  {
+    "name": "Database",
+    "font": "database-outline",
+    "description": "Database Apps"
+  }
+]

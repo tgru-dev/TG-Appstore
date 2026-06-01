@@ -1,0 +1,67 @@
+name: cloudreve
+services:
+  cloudreve:
+    image: cloudreve/cloudreve:v4
+    depends_on:
+      postgresql:
+        condition: service_started
+      redis:
+        condition: service_started
+    restart: unless-stopped
+    ports:
+      - 5212:5212
+      - 6888:6888
+      - 6888:6888/udp
+    environment:
+      - CR_CONF_Database.Type=postgres
+      - CR_CONF_Database.Host=postgresql
+      - CR_CONF_Database.User=cloudreve
+      - CR_CONF_Database.Name=cloudreve
+      - CR_CONF_Database.Port=5432
+      - CR_CONF_Redis.Server=redis:6379
+    volumes:
+      - /DATA/AppData/$AppID/data:/cloudreve/data
+    networks:
+      - cloudreve-net
+
+  postgresql:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=cloudreve
+      - POSTGRES_DB=cloudreve
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - /DATA/AppData/$AppID/database:/var/lib/postgresql/data
+    networks:
+      - cloudreve-net
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    networks:
+      - cloudreve-net
+
+networks:
+  cloudreve-net:
+    driver: bridge
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: cloudreve
+  description:
+    en_us: Cloudreve is a self-hosted file sharing and cloud storage platform with support for multiple storage backends, allowing you to build your own private cloud storage service.
+  tagline:
+    en_us: A self-hosted cloud storage platform
+  developer: Cloudreve
+  author: TG Store
+  icon: https://avatars.githubusercontent.com/u/30681652
+  thumbnail: https://avatars.githubusercontent.com/u/30681652
+  title:
+    en_us: Cloudreve
+  category: TG Store
+  port_map: '5212'
