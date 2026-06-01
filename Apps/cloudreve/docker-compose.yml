@@ -59,8 +59,8 @@ x-casaos:
     en_us: A self-hosted cloud storage platform
   developer: Cloudreve
   author: TG Store
-  icon: https://avatars.githubusercontent.com/u/30681652
-  thumbnail: https://avatars.githubusercontent.com/u/30681652
+  icon: https://raw.githubusercontent.com/cloudreve/frontend/master/public/static/img/logo192.png
+  thumbnail: https://raw.githubusercontent.com/cloudreve/frontend/master/public/static/img/logo512.png
   title:
     en_us: Cloudreve
   category: TG Store
