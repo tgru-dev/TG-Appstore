@@ -31,8 +31,8 @@ x-casaos:
     en_us: Modern media request & discovery platform
   developer: Seerr Team
   author: TG Store
-  icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/seerr.png
-  thumbnail: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/seerr.png
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/seerr/seer.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/seerr/seer.png
   title:
     en_us: Seerr
   category: Media
