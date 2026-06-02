@@ -1,0 +1,31 @@
+name: streamedtom3u
+services:
+  streamedtom3u:
+    image: ghcr.io/tgru-dev/streamedtom3u:latest
+    container_name: streamedtom3u
+    restart: unless-stopped
+    shm_size: 1gb
+    ports:
+      - 8765:8765
+      - 8768:8768
+    environment:
+      - PORT=8765
+      - UI_PORT=8768
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: streamedtom3u
+  description:
+    en_us: HLS proxy for streamed.pk API that generates an M3U playlist with local proxy URLs, usable in Jellyfin (or VLC, Kodi, OBS) as a live TV source. Fetches German football matches (Bundesliga, 2. Bundesliga, 3. Liga, WM, EM) and serves them as clean HLS streams.
+  tagline:
+    en_us: HLS proxy for streamed.pk — live football in Jellyfin
+  developer: TG Store
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/streamed2m3u/streamed2m3u.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/streamed2m3u/streamed2m3u.png
+  title:
+    en_us: streamed2m3u
+  category: Media
+  port_map: '8768'
