@@ -63,5 +63,5 @@ x-casaos:
   thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/cloudreve/cloudreve.png
   title:
     en_us: Cloudreve
-  category: TG Store
+  category: Cloud
   port_map: '5212'
