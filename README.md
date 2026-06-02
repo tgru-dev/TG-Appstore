@@ -6,10 +6,10 @@ A custom [CasaOS](https://casaos.io) AppStore with self-hosted applications.
 
 | App | Description | Category |
 | --- | ----------- | -------- |
-| [Cloudreve](Apps/cloudreve) | Self-hosted cloud storage platform with multiple storage backends | TG Store |
-| [Fredy](Apps/Freddy) | Self-hosted real estate finder for Germany | Utilities |
-| [Seerr](Apps/seerr) | Modern media request & discovery platform | Media |
-| [SFTPGo](Apps/sftpgo) | High-performance SFTP, FTP/S & WebDAV server | Network |
+| <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/cloudreve/cloudreve.png" width="32"> [Cloudreve](Apps/cloudreve) | Self-hosted cloud storage platform with multiple storage backends | TG Store |
+| <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/Freddy/freddy.png" width="32"> [Fredy](Apps/Freddy) | Self-hosted real estate finder for Germany | Utilities |
+| <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/seerr/seer.png" width="32"> [Seerr](Apps/seerr) | Modern media request & discovery platform | Media |
+| <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/sftpgo/sftp.png" width="32"> [SFTPGo](Apps/sftpgo) | High-performance SFTP, FTP/S & WebDAV server | Network |
 
 ## Add to CasaOS
 
