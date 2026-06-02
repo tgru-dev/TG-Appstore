@@ -1,0 +1,29 @@
+name: fredy
+services:
+  fredy:
+    image: ghcr.io/orangecoding/fredy:master
+    container_name: fredy
+    restart: unless-stopped
+    ports:
+      - 9998:9998
+    volumes:
+      - /DATA/AppData/$AppID/conf:/conf
+      - /DATA/AppData/$AppID/db:/db
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: fredy
+  description:
+    en_us: Fredy is a self-hosted real estate finder that automatically searches for apartments, houses, and flats on platforms like ImmoScout24, Immowelt, Immonet, eBay Kleinanzeigen, and WG-Gesucht, delivering instant notifications via Slack, Telegram, Email, Discord, or ntfy.
+  tagline:
+    en_us: Self-hosted real estate finder for Germany
+  developer: orangecoding
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/Freddy/freddy.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/Freddy/freddy.png
+  title:
+    en_us: Fredy
+  category: Utilities
+  port_map: '9998'
