@@ -1,0 +1,44 @@
+name: stash
+services:
+  stash:
+    image: stashapp/stash:latest
+    container_name: stash
+    restart: unless-stopped
+    ports:
+      - "9999:9999"
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "2m"
+    environment:
+      - STASH_STASH=/data/
+      - STASH_GENERATED=/generated/
+      - STASH_METADATA=/metadata/
+      - STASH_CACHE=/cache/
+      - STASH_PORT=9999
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /DATA/AppData/$AppID/config:/root/.stash
+      - /DATA/AppData/$AppID/metadata:/metadata
+      - /DATA/AppData/$AppID/cache:/cache
+      - /DATA/AppData/$AppID/blobs:/blobs
+      - /DATA/AppData/$AppID/generated:/generated
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: stash
+  description:
+    en_us: Stash is a self-hosted web-based organizer for your adult media collection, written in Go. Features tagging, metadata scraping, and a modern web interface for browsing and managing your library.
+  tagline:
+    en_us: Self-hosted adult media organizer
+  developer: stashapp
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/stash/stash.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/stash/stash.png
+  title:
+    en_us: Stash
+  category: Media
+  port_map: '9999'

@@ -9,6 +9,7 @@ A custom [CasaOS](https://casaos.io) AppStore with self-hosted applications.
 | <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/cloudreve/cloudreve.png" width="32"> [Cloudreve](Apps/cloudreve) | Self-hosted cloud storage platform with multiple storage backends | Cloud |
 | <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/Freddy/freddy.png" width="32"> [Fredy](Apps/Freddy) | Self-hosted real estate finder for Germany | Utilities |
 | <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/seerr/seer.png" width="32"> [Seerr](Apps/seerr) | Modern media request & discovery platform | Media |
+| <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/stash/stash.png" width="32"> [Stash](Apps/stash) | Self-hosted adult media organizer | Media |
 | <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/streamed2m3u/streamed2m3u.png" width="32"> [streamed2m3u](Apps/streamed2m3u) | HLS proxy for streamed.pk — live football in Jellyfin | Media |
 | <img src="https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/sftpgo/sftp.png" width="32"> [SFTPGo](Apps/sftpgo) | High-performance SFTP, FTP/S & WebDAV server | Network |
 
