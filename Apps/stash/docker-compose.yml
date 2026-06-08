@@ -1,9 +1,14 @@
 name: stash
 services:
   stash:
+    cpu_shares: 90
     image: stashapp/stash:latest
     container_name: stash
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8096976896
     ports:
       - "9999:9999"
     logging:
@@ -20,6 +25,7 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /DATA/AppData/$AppID/config:/root/.stash
+      - /DATA/AppData/$AppID/data:/data
       - /DATA/AppData/$AppID/metadata:/metadata
       - /DATA/AppData/$AppID/cache:/cache
       - /DATA/AppData/$AppID/blobs:/blobs
