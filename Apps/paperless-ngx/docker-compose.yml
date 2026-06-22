@@ -1,0 +1,34 @@
+name: paperless-ngx
+services:
+  paperless-ngx:
+    image: lscr.io/linuxserver/paperless-ngx:latest
+    container_name: paperless-ngx
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+    volumes:
+      - /DATA/AppData/$AppID/config:/config
+      - /DATA/AppData/$AppID/data:/data
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm
+    - arm64
+  main: paperless-ngx
+  description:
+    en_us: Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive. Scan, index and archive all your paper documents with OCR-powered search and metadata tagging.
+  tagline:
+    en_us: Document digitization & archiving with OCR
+  developer: Paperless-ngx
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless-ngx.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless-ngx.png
+  title:
+    en_us: Paperless-ngx
+  category: Utilities
+  port_map: '8000'
