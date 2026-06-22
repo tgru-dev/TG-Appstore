@@ -1,0 +1,78 @@
+name: paperless-ngx
+services:
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    depends_on:
+      db:
+        condition: service_started
+      broker:
+        condition: service_started
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+    environment:
+      - PAPERLESS_REDIS=redis://broker:6379
+      - PAPERLESS_DBHOST=db
+      - PAPERLESS_DBENGINE=postgresql
+      - PAPERLESS_DBPORT=5432
+      - PAPERLESS_DBNAME=paperless
+      - PAPERLESS_DBUSER=paperless
+      - PAPERLESS_DBPASS=paperless
+      - PAPERLESS_SECRET_KEY=change-me
+      - PAPERLESS_TIME_ZONE=Europe/Berlin
+    volumes:
+      - /DATA/AppData/$AppID/data:/usr/src/paperless/data
+      - /DATA/AppData/$AppID/media:/usr/src/paperless/media
+      - /DATA/AppData/$AppID/consume:/usr/src/paperless/consume
+      - /DATA/AppData/$AppID/export:/usr/src/paperless/export
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fs -S -L --max-time 2 http://localhost:8000 || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    networks:
+      - paperless-net
+
+  broker:
+    image: redis:7
+    restart: unless-stopped
+    volumes:
+      - /DATA/AppData/$AppID/redis:/data
+    networks:
+      - paperless-net
+
+  db:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=paperless
+      - POSTGRES_USER=paperless
+      - POSTGRES_PASSWORD=paperless
+    volumes:
+      - /DATA/AppData/$AppID/database:/var/lib/postgresql/data
+    networks:
+      - paperless-net
+
+networks:
+  paperless-net:
+    driver: bridge
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: webserver
+  description:
+    en_us: Paperless-ngx is a document management system that transforms your physical documents into a searchable online archive. Scan, index and archive all your paper documents with OCR-powered search, metadata tagging, and automatic classification.
+  tagline:
+    en_us: Document digitization & archiving with OCR
+  developer: Paperless-ngx
+  author: TG Store
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless.png
+  title:
+    en_us: Paperless-ngx
+  category: Utilities
+  port_map: '8000'
