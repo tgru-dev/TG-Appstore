@@ -26,8 +26,8 @@ x-casaos:
     en_us: Document digitization & archiving with OCR
   developer: Paperless-ngx
   author: TG Store
-  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless-ngx.png
-  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless-ngx.png
+  icon: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless.png
+  thumbnail: https://raw.githubusercontent.com/tgru-dev/TG-Appstore/main/Apps/paperless-ngx/paperless.png
   title:
     en_us: Paperless-ngx
   category: Utilities
